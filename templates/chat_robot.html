@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>暖心机器人(简易版)</title>
+    <style>
+        *{
+            margin: 0px;padding: 0px;
+        }
+        a {
+            text-decoration:none;
+            color: #333333;
+        }
+        .logo {
+            width: 100px; height: 100px; position: relative; border-radius: 100px; left: 46%; top: 100px;
+            background: url("../static/img/01.jpg") no-repeat;background-size: cover;
+        }
+        .main {
+            width: 800px; height: 550px; margin: 60px auto;background: antiquewhite;
+        }
+        .head {
+            width: 400px; height: 40px; padding-top: 40px; margin-left: 24%;
+        }
+        .head h3 {
+            text-align: center; font-family: "微软雅黑"; font-size: 20px; color: #333333;
+        }
+        .text {
+            width: 500px; height: 400px; background: #ffffff; margin: 0px auto;overflow: auto;
+        }
+        .robot_msg {
+            width: 400px; padding-top: 10px; padding-bottom: 10px;
+        }
+        .robot_img {
+            width: 40px; height: 40px; border-radius: 100px; margin-left: 3px; float: left;
+            background: url("../static/img/01.jpg") no-repeat;background-size: cover;
+        }
+        .man_msg {
+            width: 400px; padding-top: 10px; padding-bottom: 10px;
+        }
+        .man_img {
+            width: 40px; height: 40px; border-radius: 100px; margin-left: 3px; float: left;
+            background: url("../static/img/02.jpeg") no-repeat;background-size: cover;
+        }
+        .robot_content {
+            word-break: break-all;
+            word-wrap: break-word;
+            text-align: left;
+            position: relative;
+            display: inline-block;
+            font-size: 14px;
+            padding: 6px;
+            line-height: 18px;
+            -moz-border-radius: 6px;
+            -webkit-border-radius: 6px;
+            border-radius: 6px;
+            min-width: 9px;
+            max-width: 320px;
+            min-height: 18px;
+            margin: 0 0 0 10px;
+            border: 1px solid #CDD7E2;
+            background: #CDD7E2;
+        }
+        .man_content {
+            word-break: break-all;
+            word-wrap: break-word;
+            text-align: left;
+            position: relative;
+            display: inline-block;
+            font-size: 14px;
+            padding: 6px;
+            line-height: 18px;
+            -moz-border-radius: 6px;
+            -webkit-border-radius: 6px;
+            border-radius: 6px;
+            min-width: 9px;
+            max-width: 320px;
+            min-height: 18px;
+            margin: 0 0 0 10px;
+            border: 1px solid #78cdf8;
+            background: #78cdf8;
+        }
+        .content_input{
+            width: 500px; height: 80px; margin: 0px auto;
+        }
+        .input_text{
+            border: none;
+            width: 85%;
+            height: 100%;
+            background: #F5F5F5;
+            -moz-box-sizing: border-box;
+            -webkit-box-sizing: border-box;
+            -o-box-sizing: border-box;
+            -ms-box-sizing: border-box;
+            box-sizing: border-box;
+            padding: 5px;
+        }
+        .input_submit {
+            width: 15%;
+            height: 100%;
+            margin-left: -5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="logo"></div>
+    <div class="main">
+        <div class="head"><h3>暖心机器人(简易版)</h3></div>
+        <div class="text">
+            <div class="robot_msg">
+                <div class="robot_img"></div>
+                <span class="robot_content">你好，我是小鑫</span>
+            </div>
+            {% for i in data %}
+            {{ i|safe }}
+            {% endfor %}
+        </div>
+        <div class="content_input">
+            <form method="post" action="/chat_robot">
+                <input class="input_text" type="text" name="content" placeholder="请输入内容" required>
+                <input class="input_submit" type="submit" value="发送">
+            </form>
+            <div style="margin-top: 10px; text-align: center"><a href="/xunlian">点我调教小鑫，小鑫会很听话哟~</a> </div>
+        </div>
+
+    </div>
+</body>
+</html>

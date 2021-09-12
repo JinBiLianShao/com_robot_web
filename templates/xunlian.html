@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>小鑫的训练营</title>
+    <style>
+        * {
+            margin: 0px; padding: 0px;
+        }
+        a {
+            text-decoration: none; color: #333;
+        }
+        .head {
+            width: 800px; height: 500px; margin: 60px auto;background: antiquewhite;
+        }
+        .logo {
+            width: 100px; height: 100px; position: relative; border-radius: 100px; left: 46%; top: 100px;
+            background: url("../static/img/01.jpg") no-repeat;background-size: cover;
+        }
+        h3 {
+            text-align: center;
+            padding-top: 45px;
+        }
+        .text {
+            text-align: center;
+            margin: 20px auto;
+        }
+        .man{
+            margin-top: 20px;
+        }
+        .man p {
+            font-size: 20px;
+        }
+        input{
+            margin-top: 5px;
+            width: 400px;
+            color: #777977;
+            border-bottom: 2px solid #777977;
+            background-color: transparent;
+            border-top: 0px;
+            border-left: 0px;
+            border-right: 0px;
+            height: 60px;
+            padding-left: 10px;
+            font-size: 20px;
+        }
+        .robot{
+            margin-top: 20px;
+        }
+        .robot p {
+            font-size: 20px;
+        }
+        .submit {
+            margin-top: 50px;
+            color: #777977;
+            border: 2px solid #777977;
+            background-color: transparent;
+            height: 60px;
+            font-size: 20px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<div class="logo"></div>
+<div class="head">
+    <h3>大家好，我是小鑫~ 接下来请多多指教</h3>
+    <div class="text">
+        <form action="/xunlian" method="post">
+            <div class="man"><p>您的提问：</p><input type="text" name="man_content" placeholder="请输入你想问小鑫的话" required> <br></div>
+            <div class="robot"><p>小鑫的回答：</p><input type="text" name="robot_content" placeholder="请输入你想让小鑫回答的话" required> <br></div>
+            <p style="margin-top: 20px; color: red">{{ data }}</p>
+            <input class="submit" type="submit" value="学习">
+        </form>
+    </div>
+    <a href="/" >点我返回首页！</a>
+</div>
+</body>
+</html>
